@@ -43,6 +43,7 @@
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url"/>
+          <!-- Message Read Extension Point - keeping existing read functionality only -->
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
             <OfficeTab id="TabDefault">
               <Group id="msgReadGroup">
@@ -62,11 +63,19 @@
                     <SourceLocation resid="Taskpane.Url"/>
                   </Action>
                 </Control>
-                <Control xsi:type="Button" id="ActionButton">
-                  <Label resid="ActionButton.Label"/>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+          <!-- NEW: Message Compose Extension Point -->
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="msgComposeGroup">
+                <Label resid="ComposeGroupLabel"/>
+                <Control xsi:type="Button" id="colourfulCommsButton">
+                  <Label resid="ColourfulCommsButton.Label"/>
                   <Supertip>
-                    <Title resid="ActionButton.Label"/>
-                    <Description resid="ActionButton.Tooltip"/>
+                    <Title resid="ColourfulCommsButton.Label"/>
+                    <Description resid="ColourfulCommsButton.Tooltip"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Icon.16x16"/>
@@ -74,7 +83,7 @@
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>action</FunctionName>
+                    <FunctionName>showColourfulCommsMenu</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -96,11 +105,12 @@
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
-        <bt:String id="ActionButton.Label" DefaultValue="Perform an action"/>
+        <bt:String id="ComposeGroupLabel" DefaultValue="Colourful Comms"/>
+        <bt:String id="ColourfulCommsButton.Label" DefaultValue="Colorful Communications"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
-        <bt:String id="ActionButton.Tooltip" DefaultValue="Perform an action when clicked."/>
+        <bt:String id="ColourfulCommsButton.Tooltip" DefaultValue="Choose a colorful communication style for your message."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

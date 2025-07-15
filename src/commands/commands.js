@@ -31,5 +31,29 @@ function action(event) {
   event.completed();
 }
 
-// Register the function with Office.
+/**
+ * Shows the colorful communications dropdown menu
+ * @param event {Office.AddinCommands.Event}
+ */
+function showColourfulCommsMenu(event) {
+  // For now, just show a simple notification to test the function works
+  const message = {
+    type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
+    message: "Colourful Comms button clicked! Dropdown coming soon...",
+    icon: "Icon.80x80",
+    persistent: true,
+  };
+
+  // Show a notification message.
+  Office.context.mailbox.item.notificationMessages.replaceAsync(
+    "ColourfulCommsNotification",
+    message
+  );
+
+  // Be sure to indicate when the add-in command function is complete.
+  event.completed();
+}
+
+// Register the functions with Office.
 Office.actions.associate("action", action);
+Office.actions.associate("showColourfulCommsMenu", showColourfulCommsMenu);
