@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
   <Id>e6382f26-43cc-4e09-bc87-c12b2a5e3669</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.4</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="colourful_comms"/>
@@ -70,21 +70,80 @@
           <ExtensionPoint xsi:type="MessageComposeCommandSurface">
             <OfficeTab id="TabDefault">
               <Group id="msgComposeGroup">
-                <Label resid="ComposeGroupLabel"/>
-                <Control xsi:type="Button" id="colourfulCommsButton">
-                  <Label resid="ColourfulCommsButton.Label"/>
+                <Label resid="EmptyGroupLabel"/>
+                <Control xsi:type="Menu" id="colourfulCommsMenu">
+                  <Label resid="ColourfulCommsMenu.Label"/>
                   <Supertip>
-                    <Title resid="ColourfulCommsButton.Label"/>
-                    <Description resid="ColourfulCommsButton.Tooltip"/>
+                    <Title resid="ColourfulCommsMenu.Label"/>
+                    <Description resid="ColourfulCommsMenu.Tooltip"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Icon.16x16"/>
                     <bt:Image size="32" resid="Icon.32x32"/>
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>showColourfulCommsMenu</FunctionName>
-                  </Action>
+                  <Items>
+                    <Item id="fieryRedAction">
+                      <Label resid="FieryRed.Label"/>
+                      <Supertip>
+                        <Title resid="FieryRed.Label"/>
+                        <Description resid="FieryRed.Tooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="FieryRed.16x16"/>
+                        <bt:Image size="32" resid="FieryRed.32x32"/>
+                        <bt:Image size="80" resid="FieryRed.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>applyFieryRed</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="coolBlueAction">
+                      <Label resid="CoolBlue.Label"/>
+                      <Supertip>
+                        <Title resid="CoolBlue.Label"/>
+                        <Description resid="CoolBlue.Tooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CoolBlue.16x16"/>
+                        <bt:Image size="32" resid="CoolBlue.32x32"/>
+                        <bt:Image size="80" resid="CoolBlue.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>applyCoolBlue</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="earthGreenAction">
+                      <Label resid="EarthGreen.Label"/>
+                      <Supertip>
+                        <Title resid="EarthGreen.Label"/>
+                        <Description resid="EarthGreen.Tooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="EarthGreen.16x16"/>
+                        <bt:Image size="32" resid="EarthGreen.32x32"/>
+                        <bt:Image size="80" resid="EarthGreen.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>applyEarthGreen</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="sunshineYellowAction">
+                      <Label resid="SunshineYellow.Label"/>
+                      <Supertip>
+                        <Title resid="SunshineYellow.Label"/>
+                        <Description resid="SunshineYellow.Tooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="SunshineYellow.16x16"/>
+                        <bt:Image size="32" resid="SunshineYellow.32x32"/>
+                        <bt:Image size="80" resid="SunshineYellow.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>applySunshineYellow</FunctionName>
+                      </Action>
+                    </Item>
+                  </Items>
                 </Control>
               </Group>
             </OfficeTab>
@@ -97,6 +156,26 @@
         <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
         <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
         <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+
+        <!-- Fiery Red Icons -->
+        <bt:Image id="FieryRed.16x16" DefaultValue="https://localhost:3000/assets/fiery-red-16.png"/>
+        <bt:Image id="FieryRed.32x32" DefaultValue="https://localhost:3000/assets/fiery-red-32.png"/>
+        <bt:Image id="FieryRed.80x80" DefaultValue="https://localhost:3000/assets/fiery-red-80.png"/>
+
+        <!-- Cool Blue Icons -->
+        <bt:Image id="CoolBlue.16x16" DefaultValue="https://localhost:3000/assets/cool-blue-16.png"/>
+        <bt:Image id="CoolBlue.32x32" DefaultValue="https://localhost:3000/assets/cool-blue-32.png"/>
+        <bt:Image id="CoolBlue.80x80" DefaultValue="https://localhost:3000/assets/cool-blue-80.png"/>
+
+        <!-- Earth Green Icons -->
+        <bt:Image id="EarthGreen.16x16" DefaultValue="https://localhost:3000/assets/earth-green-16.png"/>
+        <bt:Image id="EarthGreen.32x32" DefaultValue="https://localhost:3000/assets/earth-green-32.png"/>
+        <bt:Image id="EarthGreen.80x80" DefaultValue="https://localhost:3000/assets/earth-green-80.png"/>
+
+        <!-- Sunshine Yellow Icons -->
+        <bt:Image id="SunshineYellow.16x16" DefaultValue="https://localhost:3000/assets/sunshine-yellow-16.png"/>
+        <bt:Image id="SunshineYellow.32x32" DefaultValue="https://localhost:3000/assets/sunshine-yellow-32.png"/>
+        <bt:Image id="SunshineYellow.80x80" DefaultValue="https://localhost:3000/assets/sunshine-yellow-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
@@ -105,12 +184,20 @@
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
-        <bt:String id="ComposeGroupLabel" DefaultValue="Colourful Comms"/>
-        <bt:String id="ColourfulCommsButton.Label" DefaultValue="Colorful Communications"/>
+        <bt:String id="EmptyGroupLabel" DefaultValue="Colors"/>
+        <bt:String id="ColourfulCommsMenu.Label" DefaultValue="Colorful Communications"/>
+        <bt:String id="FieryRed.Label" DefaultValue="Compose for Fiery Red"/>
+        <bt:String id="CoolBlue.Label" DefaultValue="Compose for Cool Blue"/>
+        <bt:String id="EarthGreen.Label" DefaultValue="Compose for Earth Green"/>
+        <bt:String id="SunshineYellow.Label" DefaultValue="Compose for Sunshine Yellow"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
-        <bt:String id="ColourfulCommsButton.Tooltip" DefaultValue="Choose a colorful communication style for your message."/>
+        <bt:String id="ColourfulCommsMenu.Tooltip" DefaultValue="Choose a colorful communication style for your message."/>
+        <bt:String id="FieryRed.Tooltip" DefaultValue="Apply a fiery red theme to your message."/>
+        <bt:String id="CoolBlue.Tooltip" DefaultValue="Apply a cool blue theme to your message."/>
+        <bt:String id="EarthGreen.Tooltip" DefaultValue="Apply an earth green theme to your message."/>
+        <bt:String id="SunshineYellow.Tooltip" DefaultValue="Apply a sunshine yellow theme to your message."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
