@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
   <Id>e6382f26-43cc-4e09-bc87-c12b2a5e3669</Id>
-  <Version>1.0.0.4</Version>
+  <Version>1.0.0.5</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="colourful_comms"/>
+  <DisplayName DefaultValue="Colourful Comms"/>
   <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-128.png"/>
@@ -185,11 +185,11 @@
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
         <bt:String id="EmptyGroupLabel" DefaultValue="Colors"/>
-        <bt:String id="ColourfulCommsMenu.Label" DefaultValue="Colorful Communications"/>
-        <bt:String id="FieryRed.Label" DefaultValue="Compose for Fiery Red"/>
-        <bt:String id="CoolBlue.Label" DefaultValue="Compose for Cool Blue"/>
-        <bt:String id="EarthGreen.Label" DefaultValue="Compose for Earth Green"/>
-        <bt:String id="SunshineYellow.Label" DefaultValue="Compose for Sunshine Yellow"/>
+        <bt:String id="ColourfulCommsMenu.Label" DefaultValue="Colorful Comms"/>
+        <bt:String id="FieryRed.Label" DefaultValue="Rewrite for Fiery Red"/>
+        <bt:String id="CoolBlue.Label" DefaultValue="Rewrite for Cool Blue"/>
+        <bt:String id="EarthGreen.Label" DefaultValue="Rewrite for Earth Green"/>
+        <bt:String id="SunshineYellow.Label" DefaultValue="Rewrite for Sunshine Yellow"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
