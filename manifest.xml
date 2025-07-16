@@ -2,15 +2,15 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
   <Id>e6382f26-43cc-4e09-bc87-c12b2a5e3669</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Contoso</ProviderName>
+  <ProviderName>Insights</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Colourful Comms"/>
-  <Description DefaultValue="A template to get started."/>
+  <Description DefaultValue="An app to rewrite emails with respect of a recipient's leading colour energy."/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-128.png"/>
-  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <SupportUrl DefaultValue="https://www.insights.com"/>
   <AppDomains>
-    <AppDomain>https://www.contoso.com</AppDomain>
+    <AppDomain>https://www.insights.com</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -23,7 +23,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+        <SourceLocation DefaultValue="https://localhost:3000/commands.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -43,30 +43,6 @@
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url"/>
-          <!-- Message Read Extension Point - keeping existing read functionality only -->
-          <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="msgReadGroup">
-                <Label resid="GroupLabel"/>
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
-                  <Label resid="TaskpaneButton.Label"/>
-                  <Supertip>
-                    <Title resid="TaskpaneButton.Label"/>
-                    <Description resid="TaskpaneButton.Tooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-          <!-- NEW: Message Compose Extension Point -->
           <ExtensionPoint xsi:type="MessageComposeCommandSurface">
             <OfficeTab id="TabDefault">
               <Group id="msgComposeGroup">
@@ -156,34 +132,23 @@
         <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
         <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
         <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
-
-        <!-- Fiery Red Icons -->
         <bt:Image id="FieryRed.16x16" DefaultValue="https://localhost:3000/assets/fiery-red-16.png"/>
         <bt:Image id="FieryRed.32x32" DefaultValue="https://localhost:3000/assets/fiery-red-32.png"/>
         <bt:Image id="FieryRed.80x80" DefaultValue="https://localhost:3000/assets/fiery-red-80.png"/>
-
-        <!-- Cool Blue Icons -->
         <bt:Image id="CoolBlue.16x16" DefaultValue="https://localhost:3000/assets/cool-blue-16.png"/>
         <bt:Image id="CoolBlue.32x32" DefaultValue="https://localhost:3000/assets/cool-blue-32.png"/>
         <bt:Image id="CoolBlue.80x80" DefaultValue="https://localhost:3000/assets/cool-blue-80.png"/>
-
-        <!-- Earth Green Icons -->
         <bt:Image id="EarthGreen.16x16" DefaultValue="https://localhost:3000/assets/earth-green-16.png"/>
         <bt:Image id="EarthGreen.32x32" DefaultValue="https://localhost:3000/assets/earth-green-32.png"/>
         <bt:Image id="EarthGreen.80x80" DefaultValue="https://localhost:3000/assets/earth-green-80.png"/>
-
-        <!-- Sunshine Yellow Icons -->
         <bt:Image id="SunshineYellow.16x16" DefaultValue="https://localhost:3000/assets/sunshine-yellow-16.png"/>
         <bt:Image id="SunshineYellow.32x32" DefaultValue="https://localhost:3000/assets/sunshine-yellow-32.png"/>
         <bt:Image id="SunshineYellow.80x80" DefaultValue="https://localhost:3000/assets/sunshine-yellow-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
         <bt:String id="EmptyGroupLabel" DefaultValue="Colors"/>
         <bt:String id="ColourfulCommsMenu.Label" DefaultValue="Colorful Comms"/>
         <bt:String id="FieryRed.Label" DefaultValue="Rewrite for Fiery Red"/>
@@ -192,7 +157,6 @@
         <bt:String id="SunshineYellow.Label" DefaultValue="Rewrite for Sunshine Yellow"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
         <bt:String id="ColourfulCommsMenu.Tooltip" DefaultValue="Choose a colorful communication style for your message."/>
         <bt:String id="FieryRed.Tooltip" DefaultValue="Apply a fiery red theme to your message."/>
         <bt:String id="CoolBlue.Tooltip" DefaultValue="Apply a cool blue theme to your message."/>
